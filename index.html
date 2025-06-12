@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FreePay - Secure Login</title>
+  <link rel="stylesheet" href="FreePay.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: greenyellow;
+      margin: 0;
+    }
+
+    #login-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    #login-box h1 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: green;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: darkgreen;
+    }
+
+    #error-message {
+      color: red;
+      margin-top: 10px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: blue;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div id="login-box">
+  <h1>FreePay Login</h1>
+  <input type="text" id="username" placeholder="Enter Username" autocomplete="off"/>
+  <input type="password" id="token" placeholder="Enter Token ID" autocomplete="off"/>
+  <button id="login-btn">Login</button>
+  <div id="error-message"></div>
+  <a href="Purchase Token ID.html">Purchase Token ID</a>
+</div>
+
+<script>
+  const correctUsername = "Khalidabayo";  // only you know
+  const correctToken = "Lacicoya02#";     // only you know
+
+  document.getElementById('login-btn').addEventListener('click', () => {
+    const username = document.getElementById('username').value.trim();
+    const token = document.getElementById('token').value.trim();
+    const errorMsg = document.getElementById('error-message');
+
+    if (username === correctUsername && token === correctToken) {
+      errorMsg.textContent = '';
+      // Redirect to withdrawal page
+      window.location.href = "widthraw successful.html";
+    } else {
+      errorMsg.textContent = "❌ Incorrect Username or Token ID.";
+    }
+  });
+</script>
+
+</body>
+</html>
